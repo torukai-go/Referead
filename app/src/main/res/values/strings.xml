@@ -2,4 +2,21 @@
     <string name="app_name">Referead</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="retry_btn_text">Retry</string>
+    <string name="no_data_tv_text">No data was loaded</string>
+    <string name="book_pages_tv_text">Book Pages</string>
+    <string name="description">description</string>
+    <string name="enter_your_search_query">Enter your search query<font color='#FF0000'>*</font></string>
+    <string name="search">SEARCH</string>
+
+    <string name="selected_item">Selected item:</string>
+    <string name="no_data_retrieved">Couldn\'t retrieve data</string>
+    <string name="retry">Retry</string>
+    <string-array name="Filters">
+        <item>Full</item>
+        <item>Partial</item>
+        <item>Ebooks</item>
+        <item>Free ebooks</item>
+        <item>Paid ebooks</item>
+    </string-array>
 </resources>

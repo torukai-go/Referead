@@ -1,7 +1,7 @@
 package com.toru.referead.di
 
 import android.app.Application
-import com.toru.referead.remote.books.CurrenciesService
+import com.toru.referead.remote.books.BooksWebService
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -33,6 +33,6 @@ object AppModule {
 
     @Provides
     @Singleton
-    fun provideBooksApi(retrofit: Retrofit): CurrenciesService =
-        retrofit.create(CurrenciesService::class.java)
+    fun provideBooksApi(retrofit: Retrofit): BooksWebService =
+        retrofit.create(BooksWebService::class.java)
 }

@@ -11,7 +11,7 @@
         android:label="fragment_main"
         tools:layout="@layout/fragment_main" >
         <action
-            android:id="@+id/action_mainFragment_to_bookFragment"
+            android:id="@+id/action_mainFragment_to_booksFragment"
             app:destination="@id/booksFragment" />
     </fragment>
     <fragment
@@ -25,6 +25,26 @@
         <argument
             android:name="query"
             app:argType="string" />
+        <argument
+            android:name="filter"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="null" />
+        <argument
+            android:name="inAunthor"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="null" />
+        <argument
+            android:name="inTitle"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="null" />
+        <argument
+            android:name="subject"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="null" />
     </fragment>
     <fragment
         android:id="@+id/bookDetailsFragment"

@@ -6,7 +6,6 @@ import androidx.core.view.isVisible
 import androidx.paging.LoadState
 import androidx.paging.LoadStateAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.google.android.material.progressindicator.BaseProgressIndicator
 import com.toru.referead.databinding.BooksLoadStateFooterBinding
 
 class BooksLoadStateAdapter(private val retry:()->Unit):

@@ -3,12 +3,10 @@ package com.toru.referead.ui.books
 import android.view.LayoutInflater
 import androidx.recyclerview.widget.RecyclerView
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
-import com.bumptech.glide.request.transition.DrawableCrossFadeTransition
 import com.toru.referead.R
 import com.toru.referead.databinding.FragmentBookBinding
 
@@ -27,7 +25,7 @@ class BooksRecyclerViewAdapter(private val listener: OnBookClickListener) : Pagi
     }
 
     override fun onBindViewHolder(holder: BooksViewHolder, position: Int) {
-        val item = getItem(position)//values[position]
+        val item = getItem(position)
 
         if(item!=null){
             holder.bind(item)
@@ -50,15 +48,16 @@ class BooksRecyclerViewAdapter(private val listener: OnBookClickListener) : Pagi
 
         fun bind (book: BooksInfo){
             binding.apply{
-                //idIVBook.setBackgroundResource(R.drawable.ic_launcher_background)
-                idTVBookName.text = book.volumeInfo.title
+                bookNameTv.text = book.volumeInfo.title
+                bookPagesTv.text = "стр. ${book.volumeInfo.pageCount.toString()}"
+
                 Glide.with(itemView)
                     .load(book.volumeInfo.imageLinks?.smallThumbnail)
                     .centerCrop()
                     .transition(DrawableTransitionOptions.withCrossFade())
-                    .placeholder(R.drawable.ic_launcher_foreground)
-                    .error(R.drawable.ic_launcher_background)
-                    .into(idIVBook)
+                    .placeholder(R.drawable.book_icon)
+                    .error(R.drawable.book_icon)
+                    .into(bookIv)
             }
         }
     }
