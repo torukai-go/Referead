@@ -49,7 +49,7 @@ class BooksRecyclerViewAdapter(private val listener: OnBookClickListener) : Pagi
         fun bind (book: BooksInfo){
             binding.apply{
                 bookNameTv.text = book.volumeInfo.title
-                bookPagesTv.text = "стр. ${book.volumeInfo.pageCount.toString()}"
+                bookPagesTv.text = "${book.volumeInfo.pageCount.toString()} pages"
 
                 Glide.with(itemView)
                     .load(book.volumeInfo.imageLinks?.smallThumbnail)

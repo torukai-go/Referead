@@ -35,8 +35,8 @@ class BooksLoadStateAdapter(private val retry:()->Unit):
             fun bind(loadState: LoadState){
                 binding.apply {
                     progressBar.isVisible = loadState is LoadState.Loading
-                    retryBtn.isVisible = loadState !is LoadState.Loading
-                    errorTv.isVisible = loadState !is LoadState.Loading
+                    retryBtn.isVisible = loadState is LoadState.Loading
+                    errorTv.isVisible = loadState is LoadState.Loading
                 }
             }
     }

@@ -11,8 +11,7 @@ private const val STARTING_PAGE_INDEX = 1
 class BooksPagingSource(
     private val api: BooksWebService,
     private val query: String,
-    private val filter: String? = null,
-
+    private val filter: String? = null
 ) : PagingSource<Int, BooksInfo>() {
 
     override suspend fun load(params: LoadParams<Int>): LoadResult<Int, BooksInfo> {
@@ -25,11 +24,13 @@ class BooksPagingSource(
             LoadResult.Page(
                 data = books,
                 prevKey = if(position == STARTING_PAGE_INDEX) null else position - 1,
-                nextKey = if(books.isEmpty()) null else position +1
+                nextKey = if(books.isEmpty()) null else position + 1
             )
         }catch (exception: IOException){
             LoadResult.Error(exception)
         }catch (exception: HttpException){
+            LoadResult.Error(exception)
+        }catch (exception: Exception){
             LoadResult.Error(exception)
         }
     }

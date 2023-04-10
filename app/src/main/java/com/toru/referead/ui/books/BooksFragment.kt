@@ -53,7 +53,7 @@ class BooksFragment : Fragment(R.layout.fragment_books_list), BooksRecyclerViewA
         val subject = if (args.subject.isNullOrEmpty()) null else args.subject
         val filter = if (args.filter.isNullOrEmpty()) null else args.filter
 
-        mainViewModel.searchBooks(query = query, inTitle = inTitle, inAuthor=inAuthor, subject = subject, filter = filter)
+        mainViewModel.searchBooks(query = query, inTitle = inTitle, inAuthor = inAuthor, subject = subject, filter = filter)
 
         mainViewModel.books.observe(viewLifecycleOwner){
             adapter.submitData(viewLifecycleOwner.lifecycle, it)

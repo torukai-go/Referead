@@ -21,8 +21,6 @@ val volumeInfo: VolumeInfo,
 val saleInfo: SaleInfo,
 @field:Json(name = "accessInfo")
 val accessInfo: AccessInfo
-
-
 ):Parcelable {
 
     @Parcelize
@@ -70,15 +68,6 @@ val accessInfo: AccessInfo
         @field:Json(name = "country")
         val country: String,
     ):Parcelable
-
-
-//    override fun hashCode(): Int {
-//        var result = id.hashCode()
-//        if(url.isNullOrEmpty()){
-//            result = 31 * result + url.hashCode()
-//        }
-//        return result
-//    }
 }
 
 
