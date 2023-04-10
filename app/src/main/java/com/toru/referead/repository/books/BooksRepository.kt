@@ -10,13 +10,13 @@ import javax.inject.Singleton
 
 @Singleton
 class BooksRepository @Inject constructor (private val api: BooksWebService) {
-    fun getSearchResult(query: String, inTitle: String? = null, inAuthor: String? = null, subject: String? = null, filter: String? = null, ) =
+    fun getSearchResult(query: String, filter: String? = null, ) =
         Pager(
             config = PagingConfig(
                 pageSize = 20,
                 maxSize = 60,
                 enablePlaceholders = true
             ),
-            pagingSourceFactory = { BooksPagingSource(api, query, inTitle, inAuthor, subject, filter ) }
+            pagingSourceFactory = { BooksPagingSource(api, query, filter ) }
         ).liveData
 }

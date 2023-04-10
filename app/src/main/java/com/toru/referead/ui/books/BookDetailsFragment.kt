@@ -4,14 +4,11 @@ import android.content.Intent
 import android.graphics.drawable.Drawable
 import android.net.Uri
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import android.widget.Toast
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.navArgs
-import androidx.navigation.navArgument
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.DataSource
 import com.bumptech.glide.load.engine.GlideException
@@ -63,11 +60,11 @@ class BookDetailsFragment : Fragment(R.layout.fragment_book_details) {
             titleTv.text = book.volumeInfo.title
             subtitleTv.text = book.volumeInfo.subtitle
             descriptionTv.text = book.volumeInfo.description
-            idTVpublisher.text= book.volumeInfo.publisher
-            idTVNoOfPages.text = "${book.volumeInfo.pageCount} pages"
-            idTVPublishDate.text = book.volumeInfo.publishedDate
+            publisherTv.text= book.volumeInfo.publisher
+            pagesCountTv.text = "${book.volumeInfo.pageCount} pages"
+            publishingDate.text = book.volumeInfo.publishedDate
 
-            idBtnPreview.setOnClickListener {
+            previewBtn.setOnClickListener {
                 val previewLink = book.volumeInfo.previewLink
 
                 try {
@@ -84,7 +81,7 @@ class BookDetailsFragment : Fragment(R.layout.fragment_book_details) {
                 }
             }
 
-            idBtnBuy.setOnClickListener {
+            buyBtn.setOnClickListener {
                 val buyLink = book.saleInfo.buyLink
 
                 try {

@@ -11,9 +11,6 @@ private const val STARTING_PAGE_INDEX = 1
 class BooksPagingSource(
     private val api: BooksWebService,
     private val query: String,
-    private val inTitle: String? = null,
-    private val inAuthor: String? = null,
-    private val subject: String? = null,
     private val filter: String? = null,
 
 ) : PagingSource<Int, BooksInfo>() {
@@ -22,7 +19,7 @@ class BooksPagingSource(
         val position = params.key ?: STARTING_PAGE_INDEX
 
         return try{
-            val response = api.getBooksInfoAsync(query, inTitle, inAuthor, subject, filter, position, 40)
+            val response = api.getBooksInfoAsync(query, filter, position, 40)
             val books = response.items
 
             LoadResult.Page(
